@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-            <title>全球时事周记可视化平台</title>
-    </head>
 <!-- Styles -->
 <style>
     #chartdiv {
@@ -15,7 +12,8 @@
 <!-- Resources -->
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+<!--<script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>-->
+<script src="https://cdn.amcharts.com/lib/5/geodata/worldChinaLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
 
 <!-- Chart code -->
@@ -95,7 +93,7 @@
 // Create main polygon series for countries
 // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
         var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
-            geoJSON: am5geodata_worldLow
+            geoJSON: am5geodata_worldChinaLow
         }));
 
         polygonSeries.mapPolygons.template.setAll({
@@ -514,10 +512,10 @@
         chart.appear(1000, 100);
 
     });
-    // end am5.ready()
-    chart.events.on("click", function(ev) {
-        console.log(chart.invert(ev.point))
-    });
+    // // end am5.ready()
+    // chart.events.on("click", function(ev) {
+    //     console.log(chart.invert(ev.point))
+    // });
 
     // 创建信息窗口
     // var opts = {
